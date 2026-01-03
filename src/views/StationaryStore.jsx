@@ -4,7 +4,7 @@ import StationaryCardData from '../configs/stationarydata';
 
 function StationaryStore() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+    <div className="flex flex-wrap gap-6 justify-center p-6 bg-gray-100 min-h-screen">
       {StationaryCardData.map((item) => {
         const { id, image, name, description, price } = item;
 

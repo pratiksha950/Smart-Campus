@@ -32,7 +32,11 @@ function StationaryCard({ image, name, description, price, onAddToCart }) {
           ₹{price}
         </p>
 
-        <Button button_variant="primary" onClick={onAddToCart} size="small"/>
+        <div className="mt-4 justify-center flex">
+          <Button variant="primary" size="medium" title={"Add To Cart"} />
+        </div>
+
+       
 
        
     

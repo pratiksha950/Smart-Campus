@@ -1,10 +1,13 @@
+import notebook from "../assets/notebook.png";
+
+
 const stationarydata = [
   {
     id: 1,
     name: "Classmate Notebook",
     description: "200 pages ruled notebook ideal for engineering students",
     price: 120,
-    image: "/images/stationery/notebook.jpg",
+    image: notebook,
     category: "Stationery",
   },
   {
