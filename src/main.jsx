@@ -18,7 +18,7 @@ root.render(
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/stationary-store" element={<StationaryStore />} />
+        <Route path="/store" element={<StationaryStore />} />
       </Routes>
     </BrowserRouter>
   </>

@@ -1,42 +1,70 @@
-
 import React from 'react'
 import Button from '../components/Button.jsx'
+import { Trash } from "lucide-react";
 
-
-const removeFromCart=(id)=>{
- 
- const cartItems=JSON.parse(localStorage.getItem("cartItems")) || [];
- const updatedCartItems=cartItems.filter(item=>item.id !== id);
-
- localStorage.setItem("cartItems",JSON.stringify(updatedCartItems));
+const removeFromCart = (id) => {
+  const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const updatedCartItems = cartItems.filter(item => item.id !== id);
+  localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
   window.location.reload();
 }
 
-
-function CartStationaryItem(  id,
-    name,
-    price,
-    quantity, 
-    imageUrl,
-  ) {
+function CartStationaryItem({
+  id,
+  name,
+  description,
+  price,
+  discount,
+  quantity,
+  imageUrl,
+}) {
   return (
-        <div className=' flex flex-row items-center justify-center border border-green-500 rounded-lg shadow-lg m-4 p-4 bg-green-100 md:flex-row w-96 '>
-        <div >
-            <img src={imageUrl} alt={name} className="h-32 w-32 object-contain bg-gray-400"/>
-        </div>
-        <div className='ml-6 flex flex-col gap-2'>
-        <p className='text-md'>ItemName: {name}</p>
-       
+    <div
+      className="
+        relative                 
+        flex flex-col md:flex-row
+        items-start
+        gap-4
+        rounded-lg
+        shadow-lg
+        p-4
+        mb-4                    
+        bg-green-100
+        w-full
+        max-w-4xl
+      "
+    >
+
+    
+      <div className="absolute top-3 right-3">
+        <Button
+          title={<Trash size={16} />}
+          variant="delete"
+          size="small"
+          onClick={() => removeFromCart(id)}
+        />
+      </div>
+
+     
+      <div className="w-32 h-32 flex-shrink-0">
+        <img
+          src={imageUrl}
+          alt={name}
+          className="w-full h-full object-contain bg-gray-400 rounded-xl"
+        />
+      </div>
+
+     
+      <div className="flex flex-col gap-2 flex-1">
+        <p className="text-md font-semibold">Item Name: {name}</p>
+        <p className="text-sm text-gray-700">{description}</p>
         <p>Price: ₹ {price} per Unit</p>
-        <p>Quantity: {quantity}</p>
-        <p className=' font-bold'>Total: ₹ {price * quantity}</p>
-
-       <Button title="Remove from Cart" variant="primary" size="small" onClick={() => removeFromCart(id)}/>
-       
-        </div>
+        <p> discount: {discount}%</p>
+        <p> Quantity: {quantity}</p>
+        <p className="font-bold">Total: ₹ {price * quantity}</p>
+      </div>
     </div>
-
   )
 }
 
-export default CartStationaryItem
+export default CartStationaryItem;

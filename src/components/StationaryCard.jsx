@@ -7,7 +7,7 @@ import toast, {Toaster} from 'react-hot-toast';
 
 
 
-function StationaryCard({ image, name, description, price ,addToCart,id}) {
+function StationaryCard({ image, name, description, price, addToCart, id }) {
     const [quantity,setQuantity]=useState(1);
 
   return (
@@ -53,6 +53,8 @@ function StationaryCard({ image, name, description, price ,addToCart,id}) {
         <p className="text-xl font-bold text-blue-700 mt-4 text-center">
           ₹{price}
         </p>
+
+       
 
         <div className="mt-4 justify-center flex">
           <Button variant="primary" size="medium" title={"Add To Cart"} onClick={() => addToCart({id, name, price, quantity,description,imageUrl:image, totalAmount: price * quantity })} />

@@ -13,29 +13,29 @@ function Cart() {
     setCartItems(existingCart);
   },[])
 
-  useEffect(()=>{
-    let total=0;
+useEffect(() => {
+  const total = cartItems.reduce((sum, item) => {
+    return sum + item.price * item.quantity;
+  }, 0);
 
-    cartItems.map((item)=>{
-      total+=item.price*item.quantity;
-    })
-    setTotalAmount(total)
-  },[cartItems])
+  setTotalAmount(total);
+}, [cartItems]);
+
 
   return (
-    <div className='bg-green-200 min-h-screen '>
+    <div className='bg-blue-200 min-h-screen '>
      
-      <h3 className='text-center font-bold text-2xl  bg-green-300 p-4'>
+      <h3 className='text-center font-bold text-2xl  bg-blue-300 p-4'>
         Total Amount: ₹ {totalAmount}
       </h3>
 
 
-    <div className='min-h-screen flex flex-row flex-wrap gap-4 justify-center bg-green-200 p-4 '>
-      <div className='max-h-[400px ] bg-green-300 '>
+    <div className='min-h-screen flex flex-row flex-wrap gap-4 justify-center bg-blue-200 p-4 '>
+      <div className='max-h-[400px ]  '>
       {
         cartItems.map((item)=>{
             console.log(item);
-          return(<CartStationaryItem key={item.id} description={item.description} {...item} >
+          return(<CartStationaryItem key={item.id}  {...item} >
             
           </CartStationaryItem>) 
         })

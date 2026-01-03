@@ -34,7 +34,7 @@ function StationaryStore() {
 
     <div className="flex flex-wrap gap-6 justify-center p-6 bg-gray-100 min-h-screen">
       {StationaryCardData.map((item) => {
-        const { id, image, name, description, price } = item;
+        const { id, image, name, description, price, discount } = item;
 
         return (
           <StationaryCard
@@ -43,6 +43,7 @@ function StationaryStore() {
             name={name}
             description={description}
             price={price}
+            discount={discount}
             addToCart={addToCart}
             id={id}
           />
