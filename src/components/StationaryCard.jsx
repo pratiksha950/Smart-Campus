@@ -5,7 +5,7 @@ import {useState} from 'react'
 import toast, {Toaster} from 'react-hot-toast';
 
 
-function StationaryCard({ image, name, description, price, discount, addToCart, id }) {
+function StationaryCard({ image, name, description, price,originalPrice, discount, addToCart, id }) {
     const [quantity,setQuantity]=useState(1);
 
   return (
@@ -26,7 +26,6 @@ function StationaryCard({ image, name, description, price, discount, addToCart, 
         <h3 className="text-lg font-semibold text-gray-800 mb-2">
           {name}
         </h3>
-
       
         <p className="text-sm text-gray-600 flex-grow">
           {description}
@@ -49,21 +48,17 @@ function StationaryCard({ image, name, description, price, discount, addToCart, 
 
           <p className="text-sm font-medium text-green-700 bg-green-100 px-2 py-1 rounded-md justify-center text-center">Discount: {discount}%</p>
 
-
-
+          
         <p className="text-xl font-bold text-blue-700 mt-4 text-center">
+          <span className="line-through text-blue-400 mr-2">
+            ₹{originalPrice}
+          </span>
           ₹{price}
         </p>
-
-       
 
         <div className="mt-4 justify-center flex">
           <Button variant="primary" size="medium" title={"Add To Cart"} onClick={() => addToCart({id, name, price, quantity,description,imageUrl:image, totalAmount: price * quantity })} />
         </div>
-
-       
-
-       
     
       </div>
     </div>

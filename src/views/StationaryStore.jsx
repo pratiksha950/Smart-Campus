@@ -51,7 +51,7 @@ function StationaryStore() {
       <div className="flex flex-wrap gap-6 justify-center p-6 bg-gray-100 min-h-screen">
         {filteredItems.length > 0 ? (
           filteredItems.map((item) => {
-            const { id, image, name, description, price, discount } = item;
+            const { id, image, name, description, price,originalPrice, discount } = item;
             return (
               <StationaryCard
                 key={id}
@@ -59,6 +59,7 @@ function StationaryStore() {
                 name={name}
                 description={description}
                 price={price}
+                originalPrice={originalPrice}
                 discount={discount}
                 addToCart={addToCart}
                 id={id}
