@@ -13,7 +13,7 @@ It provides access to **previous year question papers, a stationery store, atten
 ---
 
 ## 🏠 Homepage  
-![Smart Campus Homepage](./images/home-img/readme-img1.png)
+![Smart Campus Homepage](src/assets/homepage.png)
 
 ---
 
