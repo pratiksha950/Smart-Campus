@@ -54,20 +54,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter + Social */}
+          {/* Follow Us */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Stay Connected</h3>
-
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="w-full px-3 py-2 rounded text-black mb-3"
-            />
-
-            <button className="w-full bg-yellow-400 text-blue-900 font-semibold py-2 rounded hover:bg-yellow-300 transition">
-              Subscribe
-            </button>
-
+            <h3 className="text-lg font-bold mb-4">Follow Us</h3>
             <div className="flex gap-4 text-xl mt-5">
               <a href="https://www.facebook.com/" className="hover:text-yellow-300"><FaFacebook /></a>
               <a href="https://x.com/" className="hover:text-yellow-300"><FaTwitter /></a>
