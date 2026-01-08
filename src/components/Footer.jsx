@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -73,6 +73,7 @@ const Footer = () => {
               <a href="https://x.com/" className="hover:text-yellow-300"><FaTwitter /></a>
               <a href="https://www.instagram.com/explore/?hl=en" className="hover:text-yellow-300"><FaInstagram /></a>
               <a href="https://www.linkedin.com/feed/" className="hover:text-yellow-300"><FaLinkedin /></a>
+              <a href="https://github.com/" className="hover:text-yellow-300"><FaGithub /></a>
             </div>
           </div>
 
