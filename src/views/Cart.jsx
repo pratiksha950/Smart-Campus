@@ -1,26 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useMemo } from 'react'
 import {useState} from 'react'
 import CartStationaryItem from '../components/CartStationaryItem';
 import Btn from '../components/Button.jsx';
+ 
 
 
 function Cart() {
-  const [cartItems,setCartItems]=useState([]);
-  const [totalAmount,setTotalAmount]=useState(0);
-
-  useEffect(()=>{
-    const existingCart =
-    JSON.parse(localStorage.getItem("cartItems")) || [];
-    setCartItems(existingCart);
-  },[])
-
-useEffect(() => {
-  const total = cartItems.reduce((sum, item) => {
-    return sum + item.price * item.quantity;
-  }, 0);
-
-  setTotalAmount(total);
-}, [cartItems]);
+  const [cartItems] = useState(() => JSON.parse(localStorage.getItem("cartItems")) || []);
+  const totalAmount = useMemo(() => cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0), [cartItems]);
 
 
   return (

@@ -2,46 +2,37 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import loginImage from "../assets/login-side.jpg";
+import signupImage from "../assets/signup-side.jpg";
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
 
-  const [loginData, setLoginData] = useState({
+  const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
+    confirmPassword: "",
     role: "student",
   });
 
   const handleChange = (e) => {
-    setLoginData({
-      ...loginData,
+    setFormData({
+      ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const savedUser = JSON.parse(localStorage.getItem("user"));
 
-    if (!savedUser) {
-      alert("No user found. Please sign up first.");
-      navigate("/signup");
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match");
       return;
     }
 
-    if (
-      loginData.email === savedUser.email &&
-      loginData.password === savedUser.password &&
-      loginData.role === savedUser.role
-    ) {
-      alert("Login successful!");
-      if (loginData.role === "student") navigate("/student");
-      if (loginData.role === "faculty") navigate("/faculty");
-      if (loginData.role === "admin") navigate("/admin");
-    } else {
-      alert("Invalid credentials or role mismatch");
-    }
+    localStorage.setItem("user", JSON.stringify(formData));
+    alert("Signup successful!");
+    navigate("/login");
   };
 
   return (
@@ -51,24 +42,33 @@ const Login = () => {
       {/* Main Wrapper */}
       <div className="min-h-screen flex flex-col md:flex-row">
 
-        {/* Left Image Section */}
+        {/* Left Image */}
         <div className="hidden md:flex md:w-1/2">
           <img
-            src={loginImage}
-            alt="Campus"
+            src={signupImage}
+            alt="Signup"
             className="w-full h-full object-cover"
           />
         </div>
 
-        {/* Right Form Section */}
+        {/* Form Section */}
         <div className="flex w-full md:w-1/2 items-center justify-center bg-gray-100 px-4 py-12">
           <div className="bg-white w-full max-w-md rounded-xl shadow-lg p-6 sm:p-8">
 
             <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">
-              Login to Smart Campus
+              Create Your Account
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required
+                onChange={handleChange}
+                className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+              />
 
               <input
                 type="email"
@@ -88,6 +88,15 @@ const Login = () => {
                 className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
               />
 
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                required
+                onChange={handleChange}
+                className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+
               <select
                 name="role"
                 onChange={handleChange}
@@ -102,14 +111,17 @@ const Login = () => {
                 type="submit"
                 className="w-full bg-blue-600 text-white py-2 rounded-md font-semibold hover:bg-blue-700 transition"
               >
-                Login
+                Sign Up
               </button>
             </form>
 
             <p className="text-center text-sm text-gray-600 mt-5">
-              Don’t have an account?{" "}
-              <Link to="/signup" className="text-blue-600 font-medium hover:underline">
-                Sign Up
+              Already have an account?{" "}
+              <Link
+                to="/login"
+                className="text-blue-600 font-medium hover:underline"
+              >
+                Login
               </Link>
             </p>
 
@@ -122,4 +134,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
