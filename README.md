@@ -1,16 +1,82 @@
-# React + Vite
+# 🚀 Smart Campus – College Management & Student Resource Platform  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 👉 Live Website  
+🌐 [https://your-smartcampus-link.netlify.app/](https://your-smartcampus-link.netlify.app/)  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 About the Project  
 
-## React Compiler
+**Smart Campus** is a modern **React-based college management and student resource platform** designed to simplify academic life for students.  
+It provides access to **previous year question papers, a stationery store, attendance tracking, and essential college information** — all in one platform.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🏠 Homepage  
+![Smart Campus Homepage](./images/home-img/readme-img1.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features  
+
+### 📘 Previous Year Question Papers  
+- 📂 Browse and download subject-wise question papers  
+- 🔍 Filter by department, semester, subject, and year  
+- 📑 Organized and easy-to-access question bank  
+
+### 🛍️ Stationery Store  
+- 🧾 Browse essential stationery products  
+- 🛒 Add items to cart  
+- 💳 Checkout using the “Pay Now” feature  
+
+### 👩‍🎓 Student Login & Attendance  
+- 🔐 Secure student login system  
+- 📅 View attendance records  
+- 📊 Track academic presence easily  
+
+### ℹ️ About & Contact  
+- 🏫 College information (mission & vision)  
+- 📞 Contact form for student queries  
+
+---
+
+## 🛠️ Tech Stack  
+
+**Frontend:**  
+- HTML
+- Tailwind CSS 
+- JavaScript   
+- React.js     
+
+**Tools & Platforms:**  
+- Git & GitHub  
+- Netlify (Deployment)  
+
+---
+
+## 📂 Project Structure  
+
+
+![Smart Campus Project Structure](src/assets/folderstructure.png)
+
+
+---
+
+## ⚙️ How to Run This Website  
+
+### ▶️ Run Locally
+1️⃣ **Clone or download the repository:**  
+👉 [Smart Campus GitHub Repository](https://github.com/pratiksha950/ICP-12-Group-Project-4-React-SmartCampus)
+
+
+---
+---
+
+## 👩‍💻 Contributors  
+
+<a href="https://github.com/pratiksha950/ICP-12-Group-Project-4-React-SmartCampus/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=pratiksha950/ICP-12-Group-Project-4-React-SmartCampus" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
