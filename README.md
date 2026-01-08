@@ -79,4 +79,8 @@ It provides access to **previous year question papers, a stationery store, atten
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
+---
+Status:
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0ec2d213-1bbc-4268-b290-710cefbbd66d/deploy-status)](https://app.netlify.com/projects/smartcampusrtc/deploys)
 
