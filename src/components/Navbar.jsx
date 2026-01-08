@@ -72,9 +72,11 @@ const Navbar = () => {
           <Link onClick={() => setMenuOpen(false)} to="/login" className="block hover:text-yellow-300">Login</Link>
 
           {/* Cart */}
-          <Link onClick={() => setMenuOpen(false)} to="/cart" className="flex items-center gap-2">
+          <Link onClick={() => setMenuOpen(false)} to="/cart" className="flex items-center gap-2 relative">
             <ShoppingCartIcon className="w-6 h-6" />
-        <ShoppingCart />
+            <span className="bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center">
+              {cartCount}
+            </span>
           </Link>
         </div>
       )}

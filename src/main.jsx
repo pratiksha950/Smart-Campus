@@ -3,6 +3,7 @@ import './index.css'
 import Home from '../src/views/Home.jsx'
 import Login from '../src/views/Login.jsx'
 import Signup from '../src/views/Signup.jsx'
+import About from '../src/views/About.jsx'
 import Cart from '../src/views/Cart.jsx'
 import Contact from '../src/views/Contact.jsx'
 import StationaryStore from '../src/views/StationaryStore.jsx'
@@ -28,6 +29,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/student" element={<StudentDashboard />} />
