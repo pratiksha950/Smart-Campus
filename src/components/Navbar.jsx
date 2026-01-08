@@ -30,7 +30,11 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
 
         {/* Logo */}
-        <h1 className="text-xl font-bold">Smart Campus</h1>
+<Link to="/">
+  <h1 className="text-xl font-bold cursor-pointer">
+    Smart Campus
+  </h1>
+</Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 items-center">
