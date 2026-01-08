@@ -1,6 +1,7 @@
 import StationaryCard from '../components/StationaryCard';
 import StationaryCardData from '../configs/stationarydata';
 import toast, { Toaster } from 'react-hot-toast';
+import Navbar from '../components/Navbar';
 import { useState } from 'react';
 
 function StationaryStore() {
@@ -33,7 +34,8 @@ function StationaryStore() {
 
   return (
     <div>
-      {/* <Navbar refreshCart={refreshCart}/> */}
+      <Navbar refreshCart={refreshCart}/>
+
       <Toaster />
 
      
