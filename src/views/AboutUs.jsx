@@ -56,10 +56,7 @@ function About() {
     <Navbar />
     <div className="text-xl bg-[#F8FAFF] font-sans">
 
-      <h1 className="text-black-600 font-extrabold text-4xl md:text-4xl text-center mb-10">
-        About Smart Campus
-      </h1>
-
+     
       <div style={{
         backgroundImage: `url(${CollegeImage})`,
         backgroundSize: 'cover',

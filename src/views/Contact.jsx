@@ -62,8 +62,8 @@ function Contact() {
   return (
     <>
     <Navbar />
-    <div className='bg-[#F8FAFF] font-sans'>
-      <h1 className='text-black-600 font-extrabold text-4xl md:text-4xl text-center'>Our Contact details</h1>
+    <div className='bg-[#F8FAFF] font-sans mt-2'>
+      <h1 className='text-black font-extrabold text-4xl md:text-4xl text-center'>Our Contact details</h1>
 
       <p className="text-center max-w-3xl mx-auto mt-4 text-gray-700 md:text-lg">
         We are here to help you with any questions, enquiries, or support related to

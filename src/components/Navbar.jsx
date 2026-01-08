@@ -38,8 +38,9 @@ const Navbar = () => {
           <Link to="/about" className="hover:text-yellow-300">About</Link>
           <Link to="/store" className="hover:text-yellow-300">Store</Link>
           <Link to="/contact" className="hover:text-yellow-300">Contact</Link>
-          <Link to="/login" className="hover:text-yellow-300">Login</Link>
           <Link to="/m" className="hover:text-yellow-300">Material</Link>
+          <Link to="/login" className="hover:text-yellow-300">Login</Link>
+          
 
           {/* Cart */}
          <Link to="/cart" className="relative ml-4">

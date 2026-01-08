@@ -26,12 +26,13 @@ function Material() {
   
     
     <div className="p-6  bg-[#F8FAFF] font-sans">
-      <h1 className="text-black-600 font-extrabold text-4xl md:text-4xl justify-center item-center">
-        Previous Year Question Papers
-      </h1>
-      <p className="text-gray-500 mt-1">
-        Download university previous year question papers (PYQs)
-      </p>
+<h1 className="text-black font-extrabold text-4xl md:text-4xl text-center">
+  Previous Year Question Papers
+</h1>
+
+<p className="text-gray-500 mt-1 text-center">
+  Download university previous year question papers (PYQs)
+</p>
 
 
       <div className="flex flex-wrap gap-4 mt-6">
