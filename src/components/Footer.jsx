@@ -3,7 +3,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub} from "react-i
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white mt-16">
+    <footer className="bg-blue-600 text-white mt-16">
       
       
       <div className="max-w-7xl mx-auto px-6 py-14">

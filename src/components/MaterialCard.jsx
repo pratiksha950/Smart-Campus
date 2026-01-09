@@ -31,7 +31,7 @@ function MaterialCard({
 
       <div className="flex justify-between items-center mt-4">
         <p className="text-sm text-gray-500">{downloads} downloads · {size}</p>
-        <a href={fileUrl} download className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm">
+        <a href={fileUrl} download className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm">
           Download
         </a>
       </div>

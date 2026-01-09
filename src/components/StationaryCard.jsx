@@ -10,7 +10,7 @@ function StationaryCard({ image, name, description, price,originalPrice, discoun
 
   return (
     
-    <div className="bg-white rounded-xl shadow-md hover:shadow-lg p-4 flex flex-col justify-between h-130 w-64">
+    <div className="bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col justify-between h-130 w-64 border border-gray-200">
       
       
       <img
