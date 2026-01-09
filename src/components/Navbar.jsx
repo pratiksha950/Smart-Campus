@@ -8,19 +8,13 @@ import { useState, useEffect } from "react";
 
 const Navbar = ({ refreshCart }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
+   const [cartItems,setCartItems]=useState([]);
 
-  useEffect(() => {
-    const cartItems =
-      JSON.parse(localStorage.getItem("cartItems")) || [];
-
-    const totalCount = cartItems.reduce(
-      (sum, item) => sum + (item.quantity || 1),
-      0
-    );
-
-    setCartCount(totalCount);
-  }, [refreshCart]); 
+useEffect(() => {
+  const existingCart =
+  JSON.parse(localStorage.getItem("cartItems")) || [];
+  setCartItems(existingCart);
+}, [refreshCart]);
 
   return (
     <nav className="bg-blue-600 text-white px-5 py-4">
@@ -44,7 +38,7 @@ const Navbar = ({ refreshCart }) => {
           <Link to="/cart" className="relative ml-4">
             <ShoppingCartIcon className="w-6 h-6 hover:text-yellow-300" />
             <span className="absolute -top-2 -right-2 bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center">
-              {cartCount}
+              {cartItems.length}
             </span>
           </Link>
         </div>
@@ -77,7 +71,7 @@ const Navbar = ({ refreshCart }) => {
           >
             <ShoppingCartIcon className="w-6 h-6" />
             <span className="bg-red-500 text-xs w-5 h-5 rounded-full flex items-center justify-center">
-              {cartCount}
+              {cartItems.length}
             </span>
           </Link>
         </div>
