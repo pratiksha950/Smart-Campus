@@ -1,29 +1,34 @@
-import React, { useEffect } from 'react'
-import {useState} from 'react'
+import React, { useEffect, useState } from 'react';
 import CartStationaryItem from '../components/CartStationaryItem';
 import Btn from '../components/Button.jsx';
-
+import Navbar from '../components/Navbar.jsx';
+import Footer from '../components/Footer.jsx';
 
 function Cart() {
-  const [cartItems,setCartItems]=useState([]);
-  const [totalAmount,setTotalAmount]=useState(0);
+  const [cartItems, setCartItems] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(0);
 
-  useEffect(()=>{
+  
+  useEffect(() => {
     const existingCart =
-    JSON.parse(localStorage.getItem("cartItems")) || [];
+      JSON.parse(localStorage.getItem("cartItems")) || [];
     setCartItems(existingCart);
-  },[])
+  }, []);
 
-useEffect(() => {
-  const total = cartItems.reduce((sum, item) => {
-    return sum + item.price * item.quantity;
-  }, 0);
+  
+  useEffect(() => {
+    let total = 0;
 
-  setTotalAmount(total);
-}, [cartItems]);
+    cartItems.forEach((item) => {
+      total += item.price * item.quantity;
+    });
 
+    setTotalAmount(total);
+  }, [cartItems]);
 
-  return (
+return (
+    <>
+    <Navbar />
     <div className='bg-[#F8FAFF] font-sans min-h-screen flex flex-col bg-red-300'>
      
     <div className='min-h-screen flex flex-col flex-wrap gap-4 justify-center bg-[#F8FAFF] font-sans-200 p-4 '>
@@ -54,14 +59,12 @@ useEffect(() => {
 
       </div>
 
-
-     
-
-
       </div>
 
     </div>
     </div>
+    <Footer />
+    </>
   )
 }
 

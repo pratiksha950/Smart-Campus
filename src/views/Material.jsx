@@ -1,6 +1,8 @@
 import { useState } from "react";
 import materialdata from "../configs/materialdata";
 import MaterialCard from "../components/MaterialCard";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Material() {
   const [search, setSearch] = useState("");
@@ -19,13 +21,18 @@ function Material() {
   );
 
   return (
+    <>
+    <Navbar />
+  
+    
     <div className="p-6  bg-[#F8FAFF] font-sans">
-      <h1 className="text-black-600 font-extrabold text-4xl md:text-4xl justify-center item-center">
-        Previous Year Question Papers
-      </h1>
-      <p className="text-gray-500 mt-1">
-        Download university previous year question papers (PYQs)
-      </p>
+<h1 className="text-black font-extrabold text-4xl md:text-4xl text-center">
+  Previous Year Question Papers
+</h1>
+
+<p className="text-gray-500 mt-1 text-center">
+  Download university previous year question papers (PYQs)
+</p>
 
 
       <div className="flex flex-wrap gap-4 mt-6">
@@ -71,13 +78,31 @@ function Material() {
       </div>
 
 
-      <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mt-10 w-full">
-        {filteredMaterials.map(item => (
-          <MaterialCard key={item.id} data={item} />
-        ))}
-      </div>
+    <div className="flex flex-wrap justify-center gap-4 sm:gap-8 mt-10 w-full">
+  {filteredMaterials.map(item => (
+    <MaterialCard
+      key={item.id}
+      title={item.title}
+      description={item.description}
+      type={item.type}
+      department={item.department}
+      semester={item.semester}
+      subject={item.subject}
+      year={item.year}
+      examType={item.examType}
+      downloads={item.downloads}
+      size={item.size}
+      fileUrl={item.fileUrl}
+    />
+  ))}
+   
+</div>
     </div>
+    <Footer />
+      </>
+   
   );
 }
+
 
 export default Material;

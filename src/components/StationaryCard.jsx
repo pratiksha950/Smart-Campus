@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./Button.jsx";
+import Button from "./Button.jsx"
 import { Plus,Minus } from 'lucide-react';
 import {useState} from 'react'
 import toast, {Toaster} from 'react-hot-toast';
@@ -10,7 +10,7 @@ function StationaryCard({ image, name, description, price,originalPrice, discoun
 
   return (
     
-    <div className="bg-white rounded-xl shadow-md hover:shadow-lg p-4 flex flex-col justify-between h-130 w-64">
+    <div className="bg-white rounded-xl shadow-md hover:shadow-xl p-4 flex flex-col justify-between h-130 w-64 border md:border-gray-300 border-gray-400">
       
       
       <img
@@ -20,14 +20,14 @@ function StationaryCard({ image, name, description, price,originalPrice, discoun
       />
 
      
-      <div className="p-5 flex flex-col flex-grow">
+      <div className="p-5 flex flex-col">
         
        
         <h3 className="text-lg font-semibold text-gray-800 mb-2">
           {name}
         </h3>
       
-        <p className="text-sm text-gray-600 flex-grow">
+        <p className="text-sm text-gray-600 ">
           {description}
         </p>
 

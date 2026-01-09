@@ -13,7 +13,6 @@ import ww3 from "../assets/quetionpaper/May_Jun_2024-ww.pdf"
 
 
 const materialdata = [
-  // ================= CS =================
   {
     id: 1,
     title: "Artificial Intelligence Question Paper",

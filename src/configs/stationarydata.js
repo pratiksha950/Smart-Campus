@@ -12,11 +12,12 @@ import coloredPencils from "../assets/color-pencil.png";
 import glueStick from "../assets/gluestick.png";
 import assignmentBook from "../assets/assignment.png";
 
+
 const stationarydata = [
   {
     id: 1,
     name: "Classmate Notebook",
-    description: "200 pages ruled notebook ideal for engineering ",
+    description: "200 pagessasc notebook ideal for engineering ",
     originalPrice: 135,
     price: 120,
     discount: 10,
