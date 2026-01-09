@@ -1,9 +1,9 @@
 import Avatar from './../../assets/avatar-design.png'
 
-function Principle({name, designation, message, qualification1, qualification2}) {
+function Principle({id,name, designation, message, qualification1, qualification2}) {
   return (
-    <div>
-      <div className="bg-white p-6 rounded-xl shadow md:mx-20 mx-6 md:flex">
+    
+      <div key={id} className="bg-white p-6 rounded-xl shadow md:mx-20 mx-6 md:flex">
                   <img src={Avatar} alt="" className='md:w-70 w-50 md:mr-6 ml-12' />
                   <div className='md:mx-15 mt-5'>
                   <h1 className='font-bold'>{name}</h1>
@@ -15,7 +15,7 @@ function Principle({name, designation, message, qualification1, qualification2})
                   </div>
                   </div>
                 </div>
-    </div>
+    
   )
 }
 

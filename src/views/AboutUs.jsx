@@ -7,6 +7,7 @@ import CollegeImage from './../assets/collegess.jpg';
 import Button from './../components/Button.jsx'
 import { useState, useEffect } from "react";
 import toast, { Toaster } from 'react-hot-toast';
+import Quizapp from "../components/Aboutus/Quizapp.jsx";
 
 function About() {
 
@@ -65,7 +66,7 @@ function About() {
         backgroundSsize: "cover"
       }}>
 
-        <p className="text-center text-white text-3xl font-semibold max-w-4xl m-auto md:pt-20 pt-5">
+        <p className="text-center text-white md:text-3xl text-2xl font-semibold max-w-4xl m-auto md:pt-20 pt-5">
           Smart Campus is a modern digital platform designed to simplify campus
           management and improve communication between students, faculty, and
           administration.
@@ -127,9 +128,10 @@ function About() {
       <div>
         {
           PRINCIPLE_DATA.map((obj) => {
-            const { name, designation, message, qualification1, qualification2 } = obj;
+            const { id,name, designation, message, qualification1, qualification2 } = obj;
             return (
               <Principle
+              id={id}
                 name={name}
                 designation={designation}
                 message={message}
@@ -182,7 +184,8 @@ function About() {
           </div>
 
           <div>
-            <input type="number" min="1" max="5" placeholder="Rating (1-5)" className="border w-40 px-3 rounded-xl mx-10 mt-6 md:mt-0"
+            <input type="number" min="1" max="5" placeholder="Rating (1-5)" 
+            className="border md:w-40 w-60 px-3 rounded-xl mx-10 mt-6 md:mt-0"
               value={addReview.rating}
               onChange={(e) => {
                 setAddReview({ ...addReview, rating: e.target.value })
@@ -203,6 +206,10 @@ function About() {
         <div className="flex justify-center">
           <Button title="Add Review" button_sizes="small" onClick={addedReview} />
         </div>
+      </div>
+
+      <div>
+        <Quizapp />
       </div>
 
       <div className="bg-white p-6 rounded-xl shadow md:mx-20 mx-3 mt-10">

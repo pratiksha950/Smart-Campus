@@ -3,7 +3,7 @@ import Star from './../../assets/star.png'
 
 function Review({id, name, rating, text, imageUrl}) {
   return (
-    <div className='flex'>
+    <div key={id} className='flex'>
     <div className="bg-white p-6 rounded-xl shadow mx-5 md:w-140 w-90 flex m-3">
       <img src={imageUrl} alt="" className='md:w-35 w-30'/>
       <div className='ml-4'>
