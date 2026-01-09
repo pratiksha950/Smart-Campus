@@ -29,7 +29,7 @@ function Cart() {
 return (
     <>
     <Navbar />
-    <div className='bg-[#F8FAFF] font-sans min-h-screen flex flex-col bg-red-300'>
+    <div className='bg-[#F8FAFF] font-sans min-h-screen flex flex-col '>
      
     <div className='min-h-screen flex flex-col flex-wrap gap-4 justify-center bg-[#F8FAFF] font-sans-200 p-4 '>
       <div className='h-145 overflow-y-auto rounded-lg p-4 w-full max-w-4xl mx-auto bg-[#F8FAFF] font-sans '>

@@ -8,6 +8,8 @@ import Button from './../components/Button.jsx'
 import { useState, useEffect } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import Quizapp from "../components/Aboutus/Quizapp.jsx";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
 function About() {
 
