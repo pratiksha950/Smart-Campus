@@ -8,7 +8,7 @@ function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
 
- 
+  
   useEffect(() => {
     const existingCart =
       JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -19,52 +19,53 @@ function Cart() {
   useEffect(() => {
     let total = 0;
 
-    cartItems.map((item) => {
+    cartItems.forEach((item) => {
       total += item.price * item.quantity;
     });
 
     setTotalAmount(total);
   }, [cartItems]);
 
-  return (
-    <div className="bg-[#F8FAFF] min-h-screen flex flex-col">
-      <Navbar />
-
-      <div className="flex-1 flex flex-wrap gap-4 justify-center p-4">
-        <div className="max-h-[400px] overflow-y-auto rounded-lg p-4 w-full max-w-4xl bg-white">
-          {cartItems.length === 0 ? (
-            <p className="text-center text-gray-500">
-              Your cart is empty
-            </p>
-          ) : (
-            cartItems.map((item) => (
-              <CartStationaryItem
-                key={item.id}
-                {...item}
-              />
-            ))
-          )}
-        </div>
+return (
+    <>
+    <Navbar />
+    <div className='bg-[#F8FAFF] font-sans min-h-screen flex flex-col bg-red-300'>
+     
+    <div className='min-h-screen flex flex-col flex-wrap gap-4 justify-center bg-[#F8FAFF] font-sans-200 p-4 '>
+      <div className='h-145 overflow-y-auto rounded-lg p-4 w-full max-w-4xl mx-auto bg-[#F8FAFF] font-sans '>
+      {
+        cartItems.map((item)=>{
+            console.log(item);
+          return(<CartStationaryItem key={item.id}  {...item} >
+            
+          </CartStationaryItem>) 
+        })
+      }
       </div>
-
-      <h3 className="text-center font-bold text-2xl bg-gray-100 p-4">
-        Total Amount: ₹ {totalAmount}
+      <div>
+              <h3 className='text-center font-bold text-2xl  bg-[#F8FAFF] font-sans p-4'>
+        Total Amount: ₹ {totalAmount}     
       </h3>
 
-      <div className="flex flex-col items-center mb-6">
-        <Btn
+      <div className="flex items-center justify-center mb-4 ">
+        <Btn  
           title="Proceed to Pay"
           variant="primary"
           size="large"
           onClick={() => {
             window.location.href = "https://www.phonepe.com/";
           }}
-        />
+/>  
+
       </div>
 
-      <Footer />
+      </div>
+
     </div>
-  );
+    </div>
+    <Footer />
+    </>
+  )
 }
 
-export default Cart;
+export default Cart
