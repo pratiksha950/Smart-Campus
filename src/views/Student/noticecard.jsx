@@ -2,16 +2,9 @@ import { Trash2 } from "lucide-react";
 
 function NoticeCard({ task, deletTask }) {
   return (
-    <div className="notice-card flex items-center justify-between bg-white shadow-md rounded-xl px-4 py-3 hover:shadow-lg transition">
-      
-      <span className="notice-text text-slate-700 text-base break-words">
-        {task}
-      </span>
-
-      <Trash2
-        className="delete-icon text-red-500 hover:text-red-600 cursor-pointer transition"
-        onClick={() => deletTask(task)}
-      />
+    <div className="flex justify-between items-center bg-slate-100 p-3 rounded mb-2">
+      <span>{task}</span>
+      <Trash2 className="text-red-500 cursor-pointer" onClick={() => deletTask(task)} />
     </div>
   );
 }

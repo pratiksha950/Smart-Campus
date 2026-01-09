@@ -1,89 +1,52 @@
 import React, { useEffect, useState } from "react";
 import NoticeCard from "./noticecard";
-import NoTaskImg from "./assets/no-tasks.png";
 
-function App() {
+function Notice() {
   const [notices, setNotices] = useState([]);
   const [newNotice, setNewNotice] = useState("");
 
   useEffect(() => {
-    const savedNotices = JSON.parse(localStorage.getItem("notices"));
-    if (savedNotices) setNotices(savedNotices);
+    const saved = JSON.parse(localStorage.getItem("notices"));
+    if (saved) setNotices(saved);
   }, []);
-
-  const saveToLocalStorage = (data) => {
-    localStorage.setItem("notices", JSON.stringify(data));
-  };
 
   const addNotice = () => {
     if (!newNotice.trim()) return;
     const updated = [newNotice, ...notices];
     setNotices(updated);
-    saveToLocalStorage(updated);
+    localStorage.setItem("notices", JSON.stringify(updated));
     setNewNotice("");
   };
 
   const deleteNotice = (notice) => {
     const filtered = notices.filter((n) => n !== notice);
     setNotices(filtered);
-    saveToLocalStorage(filtered);
+    localStorage.setItem("notices", JSON.stringify(filtered));
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-indigo-100 to-purple-100 px-3 sm:px-6 py-4">
-
-    
-      <h1 className="text-2xl sm:text-3xl font-bold text-center text-indigo-700">
+    <div className="bg-white p-6 rounded-xl shadow max-w-xl mx-auto">
+      <h2 className="text-2xl font-bold text-center text-indigo-700 mb-4">
         Notice Board
-      </h1>
+      </h2>
 
-      <p className="text-center text-sm sm:text-base text-gray-600 mb-4">
-        {notices.length === 0
-          ? "No notices available. Please add a notice"
-          : "Latest notices"}
-      </p>
+      {notices.map((n, i) => (
+        <NoticeCard key={i} task={n} deletTask={deleteNotice} />
+      ))}
 
-      {notices.length === 0 && (
-        <div className="flex justify-center items-center my-6 sm:my-8">
-          <img
-            src={NoTaskImg}
-            alt="No Notices"
-            className="w-40 sm:w-56 opacity-80"
-          />
-        </div>
-      )}
-
-      <div className="space-y-3 max-w-full sm:max-w-xl mx-auto">
-        {notices.map((notice, index) => (
-          <NoticeCard key={index} task={notice} deletTask={deleteNotice} />
-        ))}
-      </div>
-
-      <div className="flex flex-col sm:flex-row gap-3 max-w-full sm:max-w-xl mx-auto mt-6">
+      <div className="flex gap-2 mt-4">
         <input
-          type="text"
-          placeholder="Add new notice..."
           value={newNotice}
           onChange={(e) => setNewNotice(e.target.value)}
-          className="w-full px-4 py-2 rounded-xl border focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          placeholder="Add notice"
+          className="flex-1 p-2 border rounded"
         />
-
-        <button
-          onClick={addNotice}
-          className="w-full sm:w-auto px-5 py-2 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition"
-        >
-          Add Notice
+        <button onClick={addNotice} className="bg-indigo-600 text-white px-4 rounded">
+          Add
         </button>
       </div>
-
-      <button
-        className="mt-6 block mx-auto px-6 py-2 rounded-xl bg-gray-700 text-white hover:bg-gray-800 transition text-sm sm:text-base"
-        onClick={() => window.history.back()}
-      >
-        Back
-      </button>
     </div>
   );
 }
 
-export default App;
+export default Notice;
