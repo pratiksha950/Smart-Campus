@@ -69,7 +69,7 @@ function SignUp() {
           </div>
 
           <div className="w-full md:w-1/2 p-6 sm:p-8">
-            <Heading text="Create Account" />
+           
 
             <p className="text-xs sm:text-sm text-center text-gray-500 mb-6">
               Join GiftForYou and start shopping

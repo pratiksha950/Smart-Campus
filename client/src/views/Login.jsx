@@ -5,6 +5,8 @@ import toast, { Toaster } from "react-hot-toast"
 import { Link } from "react-router"
 import loginImg from "../assets/login.png"
 import {useState} from "react"
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx"
 
 function Login() {
   const [loginUser, setLoginUser] = useState({
@@ -43,7 +45,7 @@ function Login() {
 
   return (
     <>
-     
+     <Navbar />
       <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-8">
         <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden">
 
@@ -56,7 +58,7 @@ function Login() {
           </div>
 
           <div className="w-full md:w-1/2 p-6 sm:p-8">
-            <Heading text="Welcome Back" />
+          
 
             <p className="text-xs sm:text-sm text-center text-gray-500 mb-6">
               Login to continue to GiftForYou

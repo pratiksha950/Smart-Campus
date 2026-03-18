@@ -9,11 +9,11 @@ function Button({ title, size = "sm", varient = "primary", onClick }) {
   };
 
   const variant_classes = {
-    primary: "bg-pink-500 text-white hover:bg-pink-600 focus:ring-pink-400",
-    secondary: "bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-400",
+    primary: "bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-400",
+    secondary: "bg-blue-500 text-white hover:bg-gray-600 focus:ring-gray-400",
     danger: "bg-red-500 text-white hover:bg-red-600 focus:ring-red-400",
     outline: "border border-blue-500 text-blue-500 hover:bg-blue-50 focus:ring-blue-400",
-    pink: "bg-pink-600 text-white hover:bg-pink-700"
+    pink: "bg-blue-600 text-white hover:bg-blue-700"
   };
 
   return (
