@@ -29,7 +29,7 @@ useEffect(() => {
           
           <Link to="/" className="hover:text-yellow-300">Home</Link>
           <Link to="/about" className="hover:text-yellow-300">About</Link>
-          <Link to="/store" className="hover:text-yellow-300">Store</Link>
+          <Link to="/StationaryStore" className="hover:text-yellow-300">Store</Link>
           <Link to="/contact" className="hover:text-yellow-300">Contact</Link>
           <Link to="/m" className="hover:text-yellow-300">Material</Link>
           <Link to="/login" className="hover:text-yellow-300">Login</Link>
@@ -60,7 +60,7 @@ useEffect(() => {
         <div className="md:hidden mt-4 space-y-4 pb-4">
           <Link onClick={() => setMenuOpen(false)} to="/" className="block hover:text-yellow-300">Home</Link>
           <Link onClick={() => setMenuOpen(false)} to="/about" className="block hover:text-yellow-300">About</Link>
-          <Link onClick={() => setMenuOpen(false)} to="/store" className="block hover:text-yellow-300">Store</Link>
+          <Link onClick={() => setMenuOpen(false)} to="/StationaryStore" className="block hover:text-yellow-300">Store</Link>
           <Link onClick={() => setMenuOpen(false)} to="/contact" className="block hover:text-yellow-300">Contact</Link>
           <Link onClick={() => setMenuOpen(false)} to="/login" className="block hover:text-yellow-300">Login</Link>
 

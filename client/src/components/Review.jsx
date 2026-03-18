@@ -1,5 +1,5 @@
 import React from 'react'
-import Star from './../../assets/star.png'
+import Star from "../assets/star.png"
 
 function Review({id, name, rating, text, imageUrl}) {
   return (

@@ -1,13 +1,13 @@
 import { GraduationCap, Users, GlobeLock } from "lucide-react";
-import { PRINCIPLE_DATA } from "./../configs/aboutus/principle.js";
-import { REVIEW_DATA } from "./../configs/aboutus/review.js";
+import { PRINCIPLE_DATA } from "../configs/aboutus/principle.js";
+import { REVIEW_DATA } from "../configs/aboutus/review.js";
 import Review from "./../components/Review.jsx";
-import Principle from "./../components/Aboutus/Principle.jsx"
-import CollegeImage from './../assets/collegess.jpg';
+import Principle from "../components/Principal.jsx"
+import CollegeImage from '../assets/college.png';
 import Button from './../components/Button.jsx'
 import { useState, useEffect } from "react";
 import toast, { Toaster } from 'react-hot-toast';
-import Quizapp from "../components/Aboutus/Quizapp.jsx";
+import Quizapp from "../components/Quizapp.jsx";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
@@ -67,7 +67,7 @@ function About() {
         backgroundSsize: "cover"
       }}>
 
-        <p className="text-center text-white md:text-3xl text-2xl font-semibold max-w-4xl m-auto md:pt-20 pt-5">
+        {/* <p className="text-center text-white md:text-3xl text-2xl font-semibold max-w-4xl m-auto md:pt-20 pt-5">
           Smart Campus is a modern digital platform designed to simplify campus
           management and improve communication between students, faculty, and
           administration.
@@ -75,7 +75,7 @@ function About() {
           Smart Campus modernizes traditional campus systems by providing a
           centralized platform where academic and administrative information
           can be accessed easily and securely.
-        </p>
+        </p> */}
       </div>
 
 

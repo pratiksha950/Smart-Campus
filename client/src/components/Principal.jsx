@@ -1,4 +1,4 @@
-import Avatar from './../../assets/avatar-design.png'
+import Avatar from '../assets/avatar-design.png'
 
 function Principle({id,name, designation, message, qualification1, qualification2}) {
   return (

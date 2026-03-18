@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ArrowRight } from 'lucide-react';
 import toast, { Toaster } from 'react-hot-toast';
-import Question from './../../configs/aboutus/questions.js'
+import Question from '../configs/aboutus/questions.js'
 
 const startIndex = 0;
 const endIndex = Question.length - 5;

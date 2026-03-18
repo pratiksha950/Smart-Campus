@@ -1,0 +1,162 @@
+import notebook from "../assets/notebook.png";
+import instrumentBox from "../assets/instruments-box.png";
+import calculator from "../assets/calculater.png";
+import sheets from "../assets/sheet.png";
+import bluepen from "../assets/pen.png";
+import mechanicalPencil from "../assets/mechanical-pencil.png";
+import highlighter from "../assets/highlighter.png";
+import geometryBox from "../assets/geometry-box.png";
+import stickyNotes from "../assets/sticky-notes-pack.png";
+import fileFolder from "../assets/file-folder.png";
+import coloredPencils from "../assets/color-pencil.png";
+import glueStick from "../assets/gluestick.png";
+import assignmentBook from "../assets/assignment.png";
+
+
+const stationarydata = [
+  {
+    id: 1,
+    name: "Classmate Notebook",
+    description: "200 pagessasc notebook ideal for engineering ",
+    originalPrice: 135,
+    price: 120,
+    discount: 10,
+    image: notebook,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 2,
+    name: "Instruments Box",
+    description: "Complete set including compass, divider, scale",
+    originalPrice: 370,
+    price: 350,
+    discount: 5,
+    image: instrumentBox,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 3,
+    name: "Scientific Calculator",
+    description: "Casio scientific calculator approved for exams",
+    originalPrice: 1175,
+    price: 999,
+    discount: 15,
+    image: calculator,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 13,
+    name: "Glue Stick",
+    description: "Non-toxic glue stick for paper",
+    originalPrice: 50,
+    price: 50,
+    discount: 0,
+    image: glueStick,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 4,
+    name: "A4 Drawing Sheets ",
+    description: "High quality sheets for engineering graphics",
+    originalPrice: 195,
+    price: 180,
+    discount: 8,
+    image: sheets,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 5,
+    name: "Blue Ball Pen",
+    description: "Smooth writing ball pens for daily use",
+    originalPrice: 90,
+    price: 90,
+    discount: 0,
+    image: bluepen,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 6,
+    name: "Mechanical Pencil",
+    description: "0.5mm mechanical pencil with refill",
+    originalPrice: 80,
+    price: 75,
+    discount: 5,
+    image: mechanicalPencil,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 7,
+    name: "Highlighter Set",
+    description: "Set of 5 neon color highlighters",
+    originalPrice: 165,
+    price: 150,
+    discount: 10,
+    image: highlighter,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 8,
+    name: "Geometry Box",
+    description: "Student geometry box with all tools",
+    originalPrice: 140,
+    price: 130,
+    discount: 5,
+    image: geometryBox,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 9,
+    name: "Sticky Notes Pack",
+    description: "Colorful sticky notes for reminders",
+    originalPrice: 60,
+    price: 60,
+    discount: 0,
+    image: stickyNotes,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 10,
+    name: "File Folder",
+    description: "Plastic file folder for documents",
+    originalPrice: 50,
+    price: 50,
+    discount: 0,
+    image: fileFolder,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 12,
+    name: "Colored Pencils",
+    description: "Vibrant colored pencils for diagrams",
+    originalPrice: 130,
+    price: 120,
+    discount: 5,
+    image: coloredPencils,
+    category: "Stationery",
+    quantity: 1,
+  },
+  {
+    id: 21,
+    name: "Assignment Book",
+    description: "Planner notebook to track assignments",
+    originalPrice: 130,
+    price: 120,
+    discount: 5,
+    image: assignmentBook,
+    category: "Stationery",
+    quantity: 1,
+  },
+];
+
+export default stationarydata;
