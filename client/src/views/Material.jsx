@@ -3,6 +3,8 @@ import materialdata from "../configs/materialdata";
 import MaterialCard from "../components/MaterialCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import UploadImg from "../assets/Upload.png"
+import { Link } from "react-router";
 
 function Material() {
   const [search, setSearch] = useState("");
@@ -23,7 +25,11 @@ function Material() {
   return (
     <>
     <Navbar />
-  
+    <div className="relative">
+      <Link to="/newUpload">
+        <img src={UploadImg} alt="upload" className="absolute w-15 h-15 right-10 top-7 " />
+        </Link>
+</div>
     
     <div className="p-6  bg-[#F8FAFF] font-sans">
 <h1 className="text-black font-extrabold text-4xl md:text-4xl text-center">

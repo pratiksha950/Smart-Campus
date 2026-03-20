@@ -11,6 +11,7 @@ import Scholership from "./views/Scholership";
 import Material from "./views/Material";
 import StationaryStore from "./views/StationaryStore";
 import Cart from '../src/views/Cart.jsx'
+import NewUpload from "./views/NewUpload.jsx";
 
 
 createRoot(document.getElementById("root")).render(
@@ -22,9 +23,10 @@ createRoot(document.getElementById("root")).render(
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
       <Route path="/StationaryStore" element={<StationaryStore />} />
-      <Route path="/scholership" element={<Scholership />} />
+      <Route path="/Scholership" element={<Scholership />} />
       <Route path="/material" element={<Material />} />
        <Route path="/cart" element={<Cart />} />
+       <Route path="/NewUpload" element={<NewUpload />} />
     </Routes>
   </BrowserRouter>
 );
