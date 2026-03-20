@@ -9,8 +9,6 @@ const Home = () => {
   return (
     <>
       <Navbar />
-
-      
       <section className="bg-[#F8FAFF] font-sans py-12 sm:py-16 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10">
           

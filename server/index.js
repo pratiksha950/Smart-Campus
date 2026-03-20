@@ -2,8 +2,8 @@ import express from "express";
 import dotenv from "dotenv"
 import cors from "cors";
 import connectDB from "./db.js";
-import { getHome, getHealth } from "./controllers/health.js";
-import { postSignUp, postLogin } from "./controllers/auth.js";
+import { getHome, getHealth } from "./controller/health.js";
+import { postSignUp, postLogin } from "./controller/auth.js";
 
 
 dotenv.config();
@@ -24,5 +24,5 @@ app.post("/login", postLogin)
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-  connectDB()
+  connectDB();
 });
