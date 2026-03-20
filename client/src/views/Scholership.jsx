@@ -9,7 +9,7 @@ function Scholarship() {
     <>
       <Navbar />
 
-      <div className="pt-24 px-5">
+      <div className="pt-4 px-5">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold">
             Scholarship <span className="text-blue-600">Opportunities</span>
