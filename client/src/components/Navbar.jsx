@@ -31,6 +31,8 @@ useEffect(() => {
           <Link to="/StationaryStore" className="hover:text-yellow-300">Store</Link>
           <Link to="/material" className="hover:text-yellow-300">Material</Link>
            <Link to="/contact" className="hover:text-yellow-300">Contact</Link>
+           <Link to="/NewTour" className="hover:text-yellow-300">NewTour</Link>
+           <Link to="/Dashboard" className="hover:text-yellow-300">Dashboard</Link>
           <Link to="/login" className="hover:text-yellow-300">Login</Link>
 
          

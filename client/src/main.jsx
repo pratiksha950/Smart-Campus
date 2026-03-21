@@ -12,7 +12,8 @@ import Material from "./views/Material";
 import StationaryStore from "./views/StationaryStore";
 import Cart from '../src/views/Cart.jsx'
 import NewUpload from "./views/NewUpload.jsx";
-
+import Dashboard from "./views/Dashboard.jsx"
+import NewTour from "./views/NewTour.jsx"
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -27,6 +28,9 @@ createRoot(document.getElementById("root")).render(
       <Route path="/material" element={<Material />} />
        <Route path="/cart" element={<Cart />} />
        <Route path="/NewUpload" element={<NewUpload />} />
+        <Route path="/Dashboard" element={<Dashboard />} />
+         <Route path="/NewTour" element={<NewTour />} />
+       
     </Routes>
   </BrowserRouter>
 );
