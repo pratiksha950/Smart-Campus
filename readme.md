@@ -1,73 +1,97 @@
-# 🚀 Smart Campus – College Management & Student Resource Platform  
+# 🚀 Smart Campus – College Management & Student Resource Platform
 
-## 👉 Live Website  
-🌐 [https://your-smartcampus-link.netlify.app/](https://smartcampusrtc.netlify.app/)  
+## 👉 Live Website
+
+🌐 https://smart-campus-0rqf.onrender.com
+
+## 👉 Backend API
+
+🔗[ https://your-backend-link.onrender.com](https://smart-campus-prec.onrender.com)
 
 ---
 
-## 📌 About the Project  
+## 📌 About the Project
 
-**Smart Campus** is a modern **React-based college management and student resource platform** designed to simplify academic life for students.  
+**Smart Campus** is a modern **React-based college management and student resource platform** designed to simplify academic life for students.
 It provides access to **previous year question papers, a stationery store, attendance tracking, and essential college information** — all in one platform.
 
 ---
 
-## 🏠 Homepage  
-![Smart Campus Homepage](src/assets/homepage.png)
+## 🏠 Homepage
+
+![Smart Campus Homepage](client/src/assets/homepage.png)
 
 ---
 
-## ✨ Features  
+## ✨ Features
 
-### 📘 Previous Year Question Papers  
-- 📂 Browse and download subject-wise question papers  
-- 🔍 Filter by department, semester, subject, and year  
-- 📑 Organized and easy-to-access question bank  
+### 📘 Previous Year Question Papers
 
-### 🛍️ Stationery Store  
-- 🧾 Browse essential stationery products  
-- 🛒 Add items to cart  
-- 💳 Checkout using the “Pay Now” feature  
+* 📂 Browse and download subject-wise question papers
+* 🔍 Filter by department, semester, subject, and year
+* 📑 Organized and easy-to-access question bank
 
-### 👩‍🎓 Student Login & Attendance  
-- 🔐 Secure student login system  
-- 📅 View attendance records  
-- 📊 Track academic presence easily  
+### 🛍️ Stationery Store
 
-### ℹ️ About & Contact  
-- 🏫 College information (mission & vision)  
-- 📞 Contact form for student queries  
+* 🧾 Browse essential stationery products
+* 🛒 Add items to cart
+* 💳 Checkout using the “Pay Now” feature
 
----
+### 👩‍🎓 Student Login & Attendance
 
-## 🛠️ Tech Stack  
+* 🔐 Secure student login system
+* 📅 View attendance records
+* 📊 Track academic presence easily
 
-**Frontend:**  
-- HTML
-- Tailwind CSS 
-- JavaScript   
-- React.js     
+### ℹ️ About & Contact
 
-**Tools & Platforms:**  
-- Git & GitHub  
-- Netlify (Deployment)  
+* 🏫 College information (mission & vision)
+* 📞 Contact form for student queries
 
 ---
 
-## 📂 Project Structure  
+## 🛠️ Tech Stack
 
+**Frontend:**
 
-![Smart Campus Project Structure](src/assets/folderstructure.png)
+* HTML
+* Tailwind CSS
+* JavaScript
+* React.js
 
+**Backend:**
+
+* Node.js
+* Express.js
+* MongoDB
+
+**Tools & Platforms:**
+
+* Git & GitHub
+* Netlify (Frontend Deployment)
+* Render (Backend Deployment)
 
 ---
 
-## ⚙️ How to Run This Website  
+## 📂 Project Structure
+
+![Smart Campus Project Structure](client/src/assets/folderstructure.png)
+
+---
+
+## ⚙️ How to Run This Website
 
 ### ▶️ Run Locally
-1️⃣ **Clone or download the repository:**  
-👉 [Smart Campus GitHub Repository](https://github.com/pratiksha950/ICP-12-Group-Project-4-React-SmartCampus)
 
+1️⃣ Clone the repository
+👉 https://github.com/pratiksha950/Smart-Campus
 
----
----
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Run frontend
+npm run dev
+
+4️⃣ Run backend
+cd server
+npm start
