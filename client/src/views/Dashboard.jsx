@@ -3,120 +3,72 @@ import Navbar from "../components/Navbar";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { getUserJwtToken } from "../utils";
-import newTour from "../assets/new-tour.png";
-import { Link } from "react-router";
-import TourCard from "../components/TourCard";
-import { useNavigate } from "react-router"
+import addImg from "../assets/new-tour.png";
+import { Link, useNavigate } from "react-router";
+import MaterialCard from "../components/MaterialCard";
 
 function Dashboard() {
-
-  const [tours, setTours] = useState([]);
+  const [materials, setMaterials] = useState([]);
   const navigate = useNavigate();
 
-  const userJwt = getUserJwtToken();
-
-  // 📥 LOAD TOURS
-  const loadTours = async () => {
-
+  const loadMaterials = async () => {
     try {
-
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URL}/tours`,
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URL}/materials`,
         {
           headers: {
-            Authorization: `Bearer ${userJwt}`,
+            Authorization: `Bearer ${getUserJwtToken()}`,
           },
         }
       );
 
-      if (response.data.success) {
-
-        setTours(response.data.data);
-
+      if (res.data.success) {
+        setMaterials(res.data.data);
       } else {
-
-        toast.error(response.data.message);
-
+        toast.error(res.data.message);
       }
-
-    } catch (error) {
-
-      toast.error("Error loading tours");
-
+    } catch {
+      toast.error("Error loading materials");
     }
-
   };
 
-  // 🔒 LOGIN CHECK
   useEffect(() => {
-
-    const token = getUserJwtToken();
-
-    if (!token) {
-
-      toast.error("Please login first!");
+    if (!getUserJwtToken()) {
+      toast.error("Login first!");
       navigate("/login");
       return;
-
     }
 
-    loadTours();
-
+    loadMaterials();
   }, []);
 
   return (
-
-    <div>
-
+    <>
       <Navbar />
 
-      <div className="w-11/12 m-auto mt-30 mb-10">
+      <div className="w-11/12 m-auto mt-20 mb-10">
 
-        {/* ➕ ADD NEW TOUR BUTTON */}
-        <Link to="/newtour">
-
+        {/* ➕ ADD BUTTON */}
+        <Link to="/NewMaterial">
           <img
-            src={newTour}
-            alt="newTour"
+            src={addImg}
+            alt="add"
             className="fixed bottom-10 right-10 h-12 cursor-pointer"
           />
-
         </Link>
 
-        {/* 🧾 TOUR LIST */}
-        {tours.map((tourItem) => {
-
-          return (
-
-            <TourCard
-              key={tourItem._id}
-              {...tourItem}
-
-              // 🗑️ REMOVE CARD AFTER DELETE
-              onDeleteSuccess={(deletedId) => {
-
-                setTours((prevTours) =>
-                  prevTours.filter(
-                    (tour) => tour._id !== deletedId
-                  )
-                );
-
-              }}
-
-            />
-
-          );
-
-        })}
+        {/* 📚 MATERIAL LIST */}
+        <div className="flex flex-wrap gap-6 justify-center">
+          {materials.map((item) => (
+            <MaterialCard key={item._id} {...item} />
+          ))}
+        </div>
 
       </div>
 
       <Toaster />
-
-    </div>
-
+    </>
   );
-
 }
 
 export default Dashboard;

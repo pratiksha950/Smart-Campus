@@ -14,6 +14,7 @@ import Cart from '../src/views/Cart.jsx'
 import NewUpload from "./views/NewUpload.jsx";
 import Dashboard from "./views/Dashboard.jsx"
 import NewTour from "./views/NewTour.jsx"
+import NewMaterial from "./views/NewMaterial.jsx"
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -30,6 +31,8 @@ createRoot(document.getElementById("root")).render(
        <Route path="/NewUpload" element={<NewUpload />} />
         <Route path="/Dashboard" element={<Dashboard />} />
          <Route path="/NewTour" element={<NewTour />} />
+        <Route path="/NewMaterial" element={<NewMaterial />} />
+
        
     </Routes>
   </BrowserRouter>

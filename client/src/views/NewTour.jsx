@@ -202,7 +202,7 @@ function NewTour() {
                   type="date"
                   value={newTour.endDate}
                   onChange={(e) =>
-                    setNewTour({
+                    setNewTour({ 
                       ...newTour,
                       endDate: e.target.value,
                     })

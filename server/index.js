@@ -1,5 +1,7 @@
+import dotenv from "dotenv";
+dotenv.config(); // 🔥 MUST BE FIRST LINE
+
 import express from "express";
-import dotenv from "dotenv"
 import cors from "cors";
 import connectDB from "./db.js";
 import { getHome, getHealth } from "./controller/health.js";
@@ -9,7 +11,12 @@ import ImageKit from "@imagekit/nodejs";
 import {getTours,postTour,putTours,GetTourById,deleteTour} from "./controller/tour.js"
 import {checkJWT} from "./middleware/jwt.js"
 
-
+import {
+  getMaterials,
+  postMaterial,
+  deleteMaterial,
+  getMaterialById,
+} from "./controller/material.js";
 
 const client = new ImageKit({
   privateKey: process.env.IMAGEKIT_PRIVATE_KEY
@@ -40,9 +47,14 @@ app.put("/tours/:id",checkJWT,putTours)
 app.get("/tours/:id",checkJWT,GetTourById)
 
 //Tour   Routes
-app.post("/tours",checkJWT,getTours)
-app.get("/tours",checkJWT,postTour)
+// app.post("/tours",checkJWT,getTours)
+// app.get("/tours",checkJWT,postTour)
 
+// 📚 MATERIAL ROUTES
+app.post("/materials",  postMaterial);
+app.get("/materials",  getMaterials);
+app.get("/materials/:id",  getMaterialById);
+app.delete("/materials/:id",  deleteMaterial);
 
 // 🗑️ DELETE ROUTE (NEW)
 app.delete("/tours/:id", checkJWT, deleteTour);
