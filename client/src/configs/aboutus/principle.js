@@ -1,8 +1,8 @@
 const PRINCIPLE_DATA = [
     {
       id: 1,
-        name: "David Kim",
-        designation: "Principal & Director",
+        name: "DR. S.M.Gulhane",
+        designation: "Principal",
         message: "Welcome to Smart-campus, where we believe in nurturing not just academic excellence but also character, creativity, and critical thinking.",
   qualification1: 
     "Ph.D. in Educational Leadership",

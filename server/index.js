@@ -57,7 +57,7 @@ app.get("/materials/:id",  getMaterialById);
 app.delete("/materials/:id",  deleteMaterial);
 
 // 🗑️ DELETE ROUTE (NEW)
-app.delete("/tours/:id", checkJWT, deleteTour);
+// app.delete("/tours/:id", checkJWT, deleteTour);
 
 
 app.listen(PORT, () => {
