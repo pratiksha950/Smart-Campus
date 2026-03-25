@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config(); // 🔥 MUST BE FIRST LINE
+dotenv.config(); 
 
 import express from "express";
 import cors from "cors";
@@ -8,8 +8,10 @@ import { getHome, getHealth } from "./controller/health.js";
 import { postSignUp, postLogin } from "./controller/auth.js";
 import ImageKit from "@imagekit/nodejs";
 
-import {getTours,postTour,putTours,GetTourById,deleteTour} from "./controller/tour.js"
-import {checkJWT} from "./middleware/jwt.js"
+import {getTours,postTour,putTours,GetTourById,deleteTour} from "./controller/tour.js";
+import {checkJWT} from "./middleware/jwt.js";
+import { updateUser } from "./controller/auth.js";
+
 
 import {
   getMaterials,
@@ -49,6 +51,9 @@ app.get("/tours/:id",checkJWT,GetTourById)
 //Tour   Routes
 // app.post("/tours",checkJWT,getTours)
 // app.get("/tours",checkJWT,postTour)
+
+app.put("/profile", checkJWT, updateUser);
+
 
 // 📚 MATERIAL ROUTES
 app.post("/materials",  postMaterial);

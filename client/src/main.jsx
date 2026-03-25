@@ -15,6 +15,8 @@ import NewUpload from "./views/NewUpload.jsx";
 import Dashboard from "./views/Dashboard.jsx"
 import NewTour from "./views/NewTour.jsx"
 import NewMaterial from "./views/NewMaterial.jsx"
+import Profile from "./views/Profile";
+
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -32,6 +34,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/Dashboard" element={<Dashboard />} />
          <Route path="/NewTour" element={<NewTour />} />
         <Route path="/NewMaterial" element={<NewMaterial />} />
+              <Route path="/profile" element={<Profile />} />
+
 
        
     </Routes>

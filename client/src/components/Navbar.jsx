@@ -5,10 +5,21 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
+import Avatar from "./Avatar";
+import { getUserData, logOutUser } from "../utils";
+import Button from "../components/Button"
+
 
 const Navbar = ({ refreshCart }) => {
   const [menuOpen, setMenuOpen] = useState(false);
    const [cartItems,setCartItems]=useState([]);
+    const [userData, setUserData] = useState({});
+
+useEffect(() => {
+  const data = getUserData();
+  setUserData(data || {});
+}, []);
+
 
 useEffect(() => {
   const existingCart =
@@ -33,7 +44,40 @@ useEffect(() => {
            <Link to="/contact" className="hover:text-yellow-300">Contact</Link>
            <Link to="/NewTour" className="hover:text-yellow-300">NewTour</Link>
            <Link to="/Dashboard" className="hover:text-yellow-300">Dashboard</Link>
-          <Link to="/login" className="hover:text-yellow-300">Login</Link>
+          
+
+          
+          <div>
+            {userData?.name ? (
+              <div className="flex items-center gap-2 hidden md:flex">
+                <Link to="/profile" className="flex items-center gap-1">
+                  {userData?.photos?.length > 0 ? (
+                    <img
+                      src={userData.photos[0]}
+                      alt="Profile"
+                      className="w-8 h-8 rounded-full object-cover hidden md:flex "
+                    />
+                  ) : (
+                    <Avatar name={userData.name} />
+                  )}
+                  <span className="text-sm md:text-lg hover:text-blue-500">Hello, {userData.name}</span>
+                </Link>
+
+                <Button
+                  title="Logout"
+                  varient="primary"
+                  onClick={logOutUser}
+                />
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                className="hidden md:block bg-blue-500 text-white md:px-3 px-1 md:py-1 py-0.5 text-sm rounded hover:bg-blue-600"
+              >
+                Login
+              </Link>
+            )}
+          </div>
 
          
           <Link to="/cart" className="relative ml-4">
