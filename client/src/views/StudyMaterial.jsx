@@ -6,8 +6,9 @@ import { getUserJwtToken } from "../utils";
 import addImg from "../assets/new-tour.png";
 import { Link, useNavigate } from "react-router";
 import MaterialCard from "../components/MaterialCard";
+import Heading from "../components/Heading";
 
-function Dashboard() {
+function StudyMaterial() {
   const [materials, setMaterials] = useState([]);
   const navigate = useNavigate();
 
@@ -46,7 +47,14 @@ function Dashboard() {
     <>
       <Navbar />
 
-      <div className="w-11/12 m-auto mt-20 mb-10">
+      <div className="w-11/12 m-auto mt-10 mb-10 bg-[#F8FAFF] ">
+
+      <Heading text=" Previous Year Question Papers" />
+
+      <p className="text-gray-500 mt-1 text-center">
+  Download university previous year question papers (PYQs)
+</p>
+
 
         {/* ➕ ADD BUTTON */}
         <Link to="/NewMaterial">
@@ -71,4 +79,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default StudyMaterial;

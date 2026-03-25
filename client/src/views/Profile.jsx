@@ -164,10 +164,10 @@ function Profile() {
       <Heading text="Update Profile" />
       <div className="bg-white shadow-lg rounded-lg flex flex-col md:flex-row w-full max-w-4xl mx-auto overflow-hidden mt-10">
         <div className="flex flex-col items-center">
-          <img src={ProfileImg} alt="Profile" className="h-full w-full object-cover" />
+          <img src={ProfileImg} alt="Profile" className="h-full w-2/3 object-cover" />
         </div>
 
-        <div className="w-full md:w-1/2 p-4 sm:p-6 my-2">
+        <div className="flex flex-col justify-center items-center min-h-[80vh] md:mr-10 ">
           <SubHeading text="Welcome Back" />
 
           <p className="text-xs sm:text-sm text-center text-gray-500 mb-3">
@@ -206,7 +206,7 @@ function Profile() {
               value={userData.email}
               onChange={handleChange}
               placeholder="Email"
-              className="mt-10"
+             
             />
 
             <Input2 name="mobile"
@@ -214,30 +214,13 @@ function Profile() {
               onChange={handleChange}
               placeholder="Mobile" />
 
-            <Input2 name="whatsapp"
-              value={userData.whatsapp}
-              onChange={handleChange}
-              placeholder="Whatsapp" />
-
-            <Input2 name="address"
-              value={userData.address}
-              onChange={handleChange}
-              placeholder="Address" />
-
+           
             <Input2 name="city"
               value={userData.city}
               onChange={handleChange}
               placeholder="City" />
 
-            <Input2 name="pincode"
-              value={userData.pincode}
-              onChange={handleChange}
-              placeholder="Pincode" />
-
-            <Input2 name="country"
-              value={userData.country}
-              onChange={handleChange}
-              placeholder="Country" />
+            
 
             <Link to="/" className="flex justify-center">
               <Button title="Update Profile" varient="primary" onClick={updateProfile} />

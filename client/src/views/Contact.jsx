@@ -62,7 +62,7 @@ function Contact() {
   return (
     <>
       <Navbar />
-      <div className='bg-[#F8FAFF] font-sans mt-2'>
+      <div className='bg-[#F8FAFF] font-sans '>
 
         <h1 className='text-black font-extrabold text-4xl text-center'>Our Contact details</h1>
 

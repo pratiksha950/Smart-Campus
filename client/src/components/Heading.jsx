@@ -2,8 +2,8 @@ import React from "react";
 
 function Heading({ text }) {
   return (
-    <div className="text-center my-4 special-elite-regular">
-      <h2 className="text-3xl md:text-4xl font-bold text-pink-600">
+    <div className="text-center mb-0 mt-4 special-elite-regular">
+      <h2 className="text-3xl md:text-4xl font-bold text-blue-600">
         {text}
       </h2>
 

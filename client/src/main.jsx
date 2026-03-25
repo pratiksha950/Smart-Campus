@@ -8,12 +8,10 @@ import SignUp from "./views/SignUp";
 import Contact from "./views/Contact";
 import About from "./views/About";
 import Scholership from "./views/Scholership";
-import Material from "./views/Material";
+import Pyq from "./views/Pyq.jsx";
 import StationaryStore from "./views/StationaryStore";
 import Cart from '../src/views/Cart.jsx'
-import NewUpload from "./views/NewUpload.jsx";
-import Dashboard from "./views/Dashboard.jsx"
-import NewTour from "./views/NewTour.jsx"
+import StudyMaterial from "./views/StudyMaterial.jsx"
 import NewMaterial from "./views/NewMaterial.jsx"
 import Profile from "./views/Profile";
 
@@ -28,11 +26,9 @@ createRoot(document.getElementById("root")).render(
       <Route path="/about" element={<About />} />
       <Route path="/StationaryStore" element={<StationaryStore />} />
       <Route path="/Scholership" element={<Scholership />} />
-      <Route path="/material" element={<Material />} />
+      <Route path="/pyq" element={<Pyq />} />
        <Route path="/cart" element={<Cart />} />
-       <Route path="/NewUpload" element={<NewUpload />} />
-        <Route path="/Dashboard" element={<Dashboard />} />
-         <Route path="/NewTour" element={<NewTour />} />
+        <Route path="/StudyMaterial" element={<StudyMaterial />} />
         <Route path="/NewMaterial" element={<NewMaterial />} />
               <Route path="/profile" element={<Profile />} />
 

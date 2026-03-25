@@ -27,7 +27,7 @@ const Home = () => {
               className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition"
               onClick={() => navigate("/login")}
             >
-              Get Started
+              SignUp Now...
             </button>
           </div>
 
@@ -52,35 +52,9 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             
          
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-              <h3 className="font-extrabold text-xl sm:text-2xl text-gray-800 mb-2">
-                Student Portal
-              </h3>
-              <p className="text-gray-600 text-sm sm:text-base">
-                View attendance, results, timetable, notices and apply for leave.
-              </p>
-            </div>
+    
 
-            
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-              <h3 className="font-extrabold text-xl sm:text-2xl text-gray-800 mb-2">
-                Faculty Dashboard
-              </h3>
-              <p className="text-gray-600 text-sm sm:text-base">
-                Manage attendance, upload marks, materials and notices.
-              </p>
-            </div>
-
-            
-            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
-              <h3 className="font-extrabold text-xl sm:text-2xl text-gray-800 mb-2">
-                Admin Control
-              </h3>
-              <p className="text-gray-600 text-sm sm:text-base">
-                Full control over students, faculty, events and analytics.
-              </p>
-            </div>
-
+          
           </div>
         </div>
       </section>

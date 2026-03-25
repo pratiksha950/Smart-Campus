@@ -40,10 +40,9 @@ useEffect(() => {
            <Link to="/about" className="hover:text-yellow-300">About</Link>
           <Link to="/Scholership" className="hover:text-yellow-300">Scholership</Link>
           <Link to="/StationaryStore" className="hover:text-yellow-300">Store</Link>
-          <Link to="/material" className="hover:text-yellow-300">Material</Link>
+          <Link to="/Pyq" className="hover:text-yellow-300">PYQ's</Link>
            <Link to="/contact" className="hover:text-yellow-300">Contact</Link>
-           <Link to="/NewTour" className="hover:text-yellow-300">NewTour</Link>
-           <Link to="/Dashboard" className="hover:text-yellow-300">Dashboard</Link>
+           <Link to="/StudyMaterial" className="hover:text-yellow-300">StudyMaterial</Link>
           
 
           
@@ -60,7 +59,7 @@ useEffect(() => {
                   ) : (
                     <Avatar name={userData.name} />
                   )}
-                  <span className="text-sm md:text-lg hover:text-blue-500">Hello, {userData.name}</span>
+                  <span className="text-sm md:text-lg">Hello, {userData.name}</span>
                 </Link>
 
                 <Button

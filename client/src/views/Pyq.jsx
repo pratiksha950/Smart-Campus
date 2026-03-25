@@ -3,10 +3,9 @@ import materialdata from "../configs/materialdata";
 import MaterialCard from "../components/MaterialCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import UploadImg from "../assets/Upload.png"
-import { Link } from "react-router";
+import  Heading  from "../components/Heading";
 
-function Material() {
+function Pyq() {
   const [search, setSearch] = useState("");
   const [department, setDepartment] = useState("All");
   const [semester, setSemester] = useState("All");
@@ -25,16 +24,10 @@ function Material() {
   return (
     <>
     <Navbar />
-    <div className="relative">
-      <Link to="/newUpload">
-        <img src={UploadImg} alt="upload" className="absolute w-15 h-15 right-10 top-7 " />
-        </Link>
-</div>
-    
     <div className="p-6  bg-[#F8FAFF] font-sans">
-<h1 className="text-black font-extrabold text-4xl md:text-4xl text-center">
-  Previous Year Question Papers
-</h1>
+<Heading text=" Previous Year Question Papers" />
+ 
+
 
 <p className="text-gray-500 mt-1 text-center">
   Download university previous year question papers (PYQs)
@@ -111,4 +104,4 @@ function Material() {
 }
 
 
-export default Material;
+export default Pyq;
