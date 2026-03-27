@@ -37,7 +37,27 @@ function StudyMaterial() {
     }
   };
 
-  // ✅ No login check — public access
+  const handleDelete = async (id) => {
+    try {
+      const token = getUserJwtToken();
+
+      await axios.delete(
+        `${import.meta.env.VITE_API_BASE_URL}/materials/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      setMaterials((prev) => prev.filter((item) => item._id !== id));
+
+      toast.success("Deleted successfully");
+    } catch (error) {
+      toast.error("Delete failed");
+    }
+  };
+
   useEffect(() => {
     loadMaterials();
   }, []);
@@ -46,7 +66,7 @@ function StudyMaterial() {
     <div className="bg-[#F8FAFF]">
       <Navbar />
 
-      <div className="w-11/12 m-auto mt-10 mb-10 bg-[#F8FAFF]">
+      <div className="w-11/12 m-auto mt-10 mb-10">
 
         <Heading text="Previous Year Question Papers" />
 
@@ -54,7 +74,7 @@ function StudyMaterial() {
           Download university previous year question papers (PYQs)
         </p>
 
-        {/* ➕ ADD BUTTON (optional protect later) */}
+        {/* ➕ ADD BUTTON */}
         <Link to="/NewMaterial">
           <img
             src={addImg}
@@ -67,17 +87,21 @@ function StudyMaterial() {
         <div className="flex flex-wrap gap-6 justify-center mt-6">
           {materials.length > 0 ? (
             materials.map((item) => (
-              <MaterialCard key={item._id} {...item} />
+              <MaterialCard
+                key={item._id}
+                {...item}
+                onDelete={handleDelete} 
+              />
             ))
           ) : (
             <p className="text-gray-400 mt-10">No materials available</p>
           )}
         </div>
-         
+
       </div>
 
       <Toaster />
-       <Footer />
+      <Footer />
     </div>
   );
 }

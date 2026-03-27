@@ -7,8 +7,6 @@ import connectDB from "./db.js";
 import { getHome, getHealth } from "./controller/health.js";
 import { postSignUp, postLogin } from "./controller/auth.js";
 import ImageKit from "@imagekit/nodejs";
-
-import {getTours,postTour,putTours,GetTourById,deleteTour} from "./controller/tour.js";
 import {checkJWT} from "./middleware/jwt.js";
 import { updateUser } from "./controller/auth.js";
 
@@ -53,10 +51,8 @@ app.put("/profile", checkJWT, updateUser);
 app.post("/materials",  postMaterial);
 app.get("/materials",  getMaterials);
 app.get("/materials/:id", getMaterialById);
-app.delete("/materials/:id", deleteMaterial);
 
 // 🗑️ DELETE ROUTE (NEW)
-app.delete("/tours/:id", checkJWT, deleteTour);
 app.delete("/materials/:id", checkJWT, deleteMaterial);
 
 app.listen(PORT, () => {
