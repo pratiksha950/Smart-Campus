@@ -48,6 +48,22 @@ const Home = () => {
           <h2 className="font-extrabold text-2xl sm:text-3xl md:text-4xl text-center mb-10 text-gray-800">
             System Features
           </h2>
+          <div
+  onClick={() => navigate("/newMaterial")}
+  className="cursor-pointer bg-white p-6 rounded-2xl shadow-md hover:shadow-xl hover:scale-105 transition duration-300"
+>
+  <div className="text-center">
+    <div className="text-blue-600 text-4xl mb-4">📤</div>
+
+    <h3 className="text-lg font-bold text-gray-800 mb-2">
+      Upload Material
+    </h3>
+
+    <p className="text-sm text-gray-600">
+      Add notes, PYQs, and study resources for students.
+    </p>
+  </div>
+</div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             

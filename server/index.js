@@ -45,12 +45,6 @@ app.get('/auth', function (req, res) {
 app.post("/Signup", postSignUp)
 app.post("/login", postLogin)
 
-app.put("/tours/:id",checkJWT,putTours)
-app.get("/tours/:id",checkJWT,GetTourById)
-
-//Tour   Routes
-// app.post("/tours",checkJWT,getTours)
-// app.get("/tours",checkJWT,postTour)
 
 app.put("/profile", checkJWT, updateUser);
 
@@ -58,8 +52,8 @@ app.put("/profile", checkJWT, updateUser);
 // 📚 MATERIAL ROUTES
 app.post("/materials",  postMaterial);
 app.get("/materials",  getMaterials);
-app.get("/materials/:id",  getMaterialById);
-app.delete("/materials/:id",  deleteMaterial);
+app.get("/materials/:id", getMaterialById);
+app.delete("/materials/:id", deleteMaterial);
 
 // 🗑️ DELETE ROUTE (NEW)
 // app.delete("/tours/:id", checkJWT, deleteTour);
