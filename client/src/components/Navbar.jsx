@@ -105,7 +105,8 @@ useEffect(() => {
           <Link onClick={() => setMenuOpen(false)} to="/about" className="block hover:text-yellow-300">About</Link>
           <Link onClick={() => setMenuOpen(false)} to="/Scholership" className="block hover:text-yellow-300">Scholership</Link>
           <Link onClick={() => setMenuOpen(false)} to="/StationaryStore" className="block hover:text-yellow-300">Store</Link>
-           <Link onClick={() => setMenuOpen(false)} to="/Material" className="block hover:text-yellow-300">Material</Link>
+           <Link onClick={() => setMenuOpen(false)} to="/Pyq" className="block hover:text-yellow-300">PYQ's</Link>
+           <Link onClick={() => setMenuOpen(false)} to="/StudyMaterial" className="block hover:text-yellow-300">StudyMaterial</Link>
            <Link onClick={() => setMenuOpen(false)} to="/contact" className="block hover:text-yellow-300">Contact</Link>
           <Link onClick={() => setMenuOpen(false)} to="/login" className="block hover:text-yellow-300">Login</Link>
 

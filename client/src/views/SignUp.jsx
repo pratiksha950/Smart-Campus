@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router";
 import Navbar from "../components/Navbar";
 import signupImg from "../assets/signUP.png";
 import Footer from "../components/Footer.jsx";
+import Heading from "../components/Heading.jsx";
 
 function SignUp() {
 
@@ -71,9 +72,9 @@ function SignUp() {
           <div className="w-full md:w-1/2 p-6 sm:p-8">
            
 
-            <p className="text-xs sm:text-sm text-center text-gray-500 mb-6">
-              Join GiftForYou and start shopping
-            </p>
+           <div  className="mb-4">
+             <Heading text="SignUp"/>
+           </div>
 
             <form onSubmit={createUser} className="flex flex-col gap-3 sm:gap-4">
 

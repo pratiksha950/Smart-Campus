@@ -6,7 +6,8 @@ import { Link } from "react-router"
 import loginImg from "../assets/login.png"
 import {useState} from "react"
 import Navbar from "../components/Navbar.jsx";
-import Footer from "../components/Footer.jsx"
+import Footer from "../components/Footer.jsx";
+import Heading from "../components/Heading.jsx";
 
 function Login() {
   const [loginUser, setLoginUser] = useState({
@@ -60,9 +61,10 @@ function Login() {
           <div className="w-full md:w-1/2 p-6 sm:p-8">
           
 
-            <p className="text-xs sm:text-sm text-center text-gray-500 mb-6">
-              Login to continue to GiftForYou
-            </p>
+            <div  className="mb-4">
+             <Heading text="Login"/>
+           </div>
+
 
             <form onSubmit={checkUserLogin} className="flex flex-col gap-3 sm:gap-4">
 
