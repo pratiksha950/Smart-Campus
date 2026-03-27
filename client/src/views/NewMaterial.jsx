@@ -108,7 +108,7 @@
 
         if (res.data.success) {
         toast.success("Material added 🎉");
-        navigate("/dashboard");
+        navigate("/StudyMaterial");
         } else {
         toast.error(res.data.message);
         }
