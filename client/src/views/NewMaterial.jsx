@@ -14,6 +14,7 @@
     ImageKitUploadNetworkError,
     ImageKitServerError,
     } from "@imagekit/react";
+import Footer from "../components/Footer";
 
     // 🔐 AUTH
     const authenticator = async () => {
@@ -122,15 +123,18 @@
         <>
         <Navbar />
 
-        <div className="min-h-screen bg-[#F8FAFF] py-10 px-4">
-            <h1 className="text-4xl font-extrabold text-center mb-8">
-            Upload Study Material
+        
+
+        <div className="min-h-screen bg-[#F8FAFF]px-4">
+            <div>
+            <h1 className="text-4xl font-extrabold text-center mt-6 text-blue-500">
+            Upload Study Material 
             </h1>
 
-            <div className="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
+            <div className="max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-lg mb-8 mt-8">
 
             {/* GRID FORM */}
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4 ">
 
                 <Input2
                 type="text"
@@ -235,10 +239,12 @@
                 Uploading: {progress.toFixed(0)}%
                 </p>
             )}
-
             </div>
 
+            </div>
             <Toaster />
+            <Footer />
+
         </div>
         </>
     );

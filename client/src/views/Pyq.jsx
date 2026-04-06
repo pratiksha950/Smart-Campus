@@ -4,6 +4,7 @@ import MaterialCard from "../components/MaterialCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import  Heading  from "../components/Heading";
+import AddMaterialCard from "../components/AddMaterialCard";
 
 function Pyq() {
   const [search, setSearch] = useState("");
@@ -24,14 +25,13 @@ function Pyq() {
   return (
     <>
     <Navbar />
+   
     <div className="p-6  bg-[#F8FAFF] font-sans">
 <Heading text=" Previous Year Question Papers" />
+ <div className="max-w-4xl mx-auto mt-6">
+  <AddMaterialCard />
+ </div>
  
-
-
-<p className="text-gray-500 mt-1 text-center">
-  Download university previous year question papers (PYQs)
-</p>
 
 
       <div className="flex flex-wrap gap-4 mt-6">

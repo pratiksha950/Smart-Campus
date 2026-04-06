@@ -8,6 +8,8 @@ import { Link } from "react-router";
 import MaterialCard from "../components/MaterialCard";
 import Heading from "../components/Heading";
 import Footer from "../components/Footer";
+    import AddMaterialCard from "../components/AddMaterialCard";
+
 
 function StudyMaterial() {
   const [materials, setMaterials] = useState([]);
@@ -66,12 +68,14 @@ function StudyMaterial() {
     <div className="bg-[#F8FAFF]">
       <Navbar />
 
+      
+
       <div className="w-11/12 m-auto mt-10 mb-10">
 
-        <Heading text="Previous Year Question Papers" />
+        <Heading text="Notes" />
 
         <p className="text-gray-500 mt-1 text-center">
-          Download university previous year question papers (PYQs)
+          Download Notes
         </p>
 
         {/* ➕ ADD BUTTON */}
@@ -99,7 +103,7 @@ function StudyMaterial() {
         </div>
 
       </div>
-
+<AddMaterialCard />
       <Toaster />
       <Footer />
     </div>

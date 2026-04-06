@@ -40,6 +40,8 @@ const Footer = () => {
               <li><Link to="/contact" className="hover:text-yellow-300">Contact</Link></li>
               <li><Link to="/about" className="hover:text-yellow-300">About</Link></li>
               <li><Link to="/pyq" className="hover:text-yellow-300">Materials</Link></li>
+              <li> <Link to="/StudyMaterial" className="hover:text-yellow-300">StudyMaterial</Link></li>
+              <li> <Link to="/Scholership" className="hover:text-yellow-300">Scholarship</Link></li>
             </ul>
           </div>
 
@@ -47,11 +49,12 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">Departments</h3>
             <ul className="space-y-2 text-sm text-gray-300">
+              <li>Electronics And Computer </li>
               <li>Computer Engineering</li>
               <li>Information Technology</li>
               <li>Mechanical</li>
               <li>Civil</li>
-              <li>Electronics</li>
+              
            
             </ul>
           </div>
