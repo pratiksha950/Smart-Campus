@@ -18,6 +18,11 @@ import {
   getMaterialById,
 } from "./controller/material.js";
 
+import {
+  postReview,
+  getReviews,
+} from "./controller/review.js";
+
 const client = new ImageKit({
   privateKey: process.env.IMAGEKIT_PRIVATE_KEY
 });
@@ -54,6 +59,10 @@ app.get("/materials/:id", getMaterialById);
 
 // 🗑️ DELETE ROUTE (NEW)
 app.delete("/materials/:id", checkJWT, deleteMaterial);
+
+// ⭐ REVIEW ROUTES
+app.post("/reviews", postReview);
+app.get("/reviews", getReviews);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

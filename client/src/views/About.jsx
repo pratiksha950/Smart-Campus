@@ -19,7 +19,34 @@ function About() {
     error: "",
   });
 
-  const addedReview = () => {
+  const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch reviews from database
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/reviews");
+        const data = await response.json();
+        if (data.success) {
+          // Generate random avatar for each review
+          const reviewsWithAvatar = data.data.map((review) => ({
+            ...review,
+            imageUrl: `https://avatar.iran.liara.run/public/${Math.floor(Math.random() * 100)}`,
+          }));
+          setReviews(reviewsWithAvatar);
+        }
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching reviews:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchReviews();
+  }, []);
+
+  const addedReview = async () => {
     if (!addReview.name) {
       toast.error("Enter your Name");
       return;
@@ -29,16 +56,44 @@ function About() {
       return;
     }
 
-    localStorage.setItem("userData", JSON.stringify(addReview));
+    try {
+      const response = await fetch("http://localhost:8080/reviews", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: addReview.name,
+          rating: parseInt(addReview.rating),
+          text: addReview.message,
+        }),
+      });
 
-    toast.success("Enquiry submit Successfully 🎉");
+      const data = await response.json();
 
-    setAddReview({
-      name: "",
-      rating: "",
-      message: "",
-      error: "",
-    });
+      if (data.success) {
+        // Add the new review to the list immediately
+        const newReview = {
+          ...data.data,
+          imageUrl: `https://avatar.iran.liara.run/public/${Math.floor(Math.random() * 100)}`,
+        };
+        setReviews([newReview, ...reviews]);
+
+        toast.success("Review submitted successfully 🎉");
+
+        setAddReview({
+          name: "",
+          rating: "",
+          message: "",
+          error: "",
+        });
+      } else {
+        toast.error(data.message || "Error submitting review");
+      }
+    } catch (error) {
+      console.error("Error submitting review:", error);
+      toast.error("Error submitting review");
+    }
   };
 
   useEffect(() => {
@@ -158,18 +213,24 @@ function About() {
             Student Reviews
           </h2>
           <div className="flex justify-center flex-wrap">
-            {REVIEW_DATA.map((obj) => {
-              const { id, name, rating, text, imageUrl } = obj;
-              return (
-                <Review
-                  id={id}
-                  name={name}
-                  rating={rating}
-                  text={text}
-                  imageUrl={imageUrl}
-                />
-              );
-            })}
+            {loading ? (
+              <p className="text-center text-gray-600">Loading reviews...</p>
+            ) : reviews.length === 0 ? (
+              <p className="text-center text-gray-600">No reviews yet. Be the first to add one!</p>
+            ) : (
+              reviews.map((obj) => {
+                const { _id, name, rating, text, imageUrl } = obj;
+                return (
+                  <Review
+                    id={_id}
+                    name={name}
+                    rating={rating}
+                    text={text}
+                    imageUrl={imageUrl}
+                  />
+                );
+              })
+            )}
           </div>
         </div>
 
